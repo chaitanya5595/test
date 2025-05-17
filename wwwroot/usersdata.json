@@ -1,0 +1,36 @@
+[{
+    "Name": "sai",
+    "Email": "sai@gmail.com",
+    "Password": "1234",
+    "Gender": "Male",
+    "CreatedDate": "14-05-25 20:09:51"
+  },
+  {
+    "Name": "Teja",
+    "Email": "Teja@gmail.com",
+    "Password": "234",
+    "Gender": "Male",
+    "CreatedDate": "15-05-25 20:10:45"
+  },
+  {
+    "Name": "chaitanya",
+    "Email": "chaitanya@gmail.com",
+    "Password": "1234",
+    "Gender": "Male",
+    "CreatedDate": "16-05-25 20:09:51"
+  },
+  {
+    "Name": "laxman",
+    "Email": "laxman@gmail.com",
+    "Password": "234",
+    "Gender": "Male",
+    "CreatedDate": "16-05-25 20:10:45"
+  },
+  {
+    "Name": "pavan",
+    "Email": "pavan@gmail.com",
+    "Password": "1234",
+    "Gender": "Male",
+    "CreatedDate": "16-05-25 21:02:54"
+  }
+]

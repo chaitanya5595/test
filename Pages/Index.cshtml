@@ -1,0 +1,118 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<script src="~/js/index.js"></script>
+<style>
+    body {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: 'Poppins', sans-serif;
+        margin: 0; /* Ensures no unwanted spacing */
+    }
+
+    .container-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .card {
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        width: 400px;
+    }
+
+    .form-control:focus {
+        box-shadow: none;
+        border-color: #764ba2;
+    }
+
+    .btn-primary {
+        background-color: #764ba2;
+        border: none;
+    }
+
+        .btn-primary:hover {
+            background-color: #5a3d8c;
+        }
+
+    .hidden {
+        display: none;
+    }
+</style>
+
+<div class="container-center">
+    <div id="login-container" class="card text-center">
+        <h2 class="mb-3">Welcome Back!</h2>
+        <p>Enter your credentials to access your account</p>
+
+        <!-- Login Form -->
+        <form id="login-form">
+            <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Email" id="login-email" required>
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" placeholder="Password" id="login-password" required>
+            </div>
+            <button type="button" class="btn btn-primary w-100" onclick="ValidateLogin()">Login</button>
+        </form>
+
+        <hr class="my-4">
+
+        <p>Don't have an account? <a href="#" id="signup-link" onclick="signup()">Create one</a></p>
+    </div>
+
+    <!-- Signup Form (Hidden Initially) -->
+    <div id="signup-container" class="card text-center hidden">
+        <h4>Get Started Now</h4>
+        <form id="signup-form">
+            <div class="mb-2">
+                <input type="text" class="form-control" placeholder="Name" id="signup-name" required>
+            </div>
+            <div class="mb-2">
+                <input type="email" class="form-control" placeholder="Email" id="signup-email" required>
+            </div>
+            <div class="mb-2">
+                <input type="password" class="form-control" placeholder="Password" id="signup-password" required>
+            </div>
+            <div class="mb-2">
+                <select class="form-control" id="signup-gender" required>
+                    <option selected disabled>Select Gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success w-100" onclick="savedata()">Sign Up</button>
+        </form>
+    </div>
+
+    <!-- Success Popup (Initially Hidden) -->
+    <div id="success-popup" class="card text-center hidden">
+        <h4 class="text-success">✅ Account Successfully Created!</h4>
+        <p>You can now log in with your credentials.</p>
+        <button class="btn btn-primary w-100" id="back-to-login">Back to Login</button>
+    </div>
+</div>
+
+<script>
+    
+
+    // document.getElementById("signup-form").addEventListener("submit", function (event) {
+    //     event.preventDefault(); // Prevent actual submission
+    //     document.getElementById("signup-container").classList.add("hidden");
+    //     document.getElementById("success-popup").classList.remove("hidden");
+    // });
+
+    document.getElementById("back-to-login").addEventListener("click", function () {
+        document.getElementById("success-popup").classList.add("hidden");
+        document.getElementById("login-container").classList.remove("hidden");
+    });
+</script>
